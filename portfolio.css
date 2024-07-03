@@ -1,0 +1,63 @@
+.nav-link{
+    color: white;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.nav-link:hover{
+    border: 2px double white;
+    border-radius: 20px;
+    font-family: cursive;
+    font-weight: bolder;
+}
+
+.nav-card{
+    font-family: cursive;
+    font-weight: bold;
+    color: gold;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.srch-btns{
+    border-radius: 20px;
+}
+
+.srch-btns{
+    outline-color: white;
+}
+
+.cnst-text{
+    color: white;
+    font-family: cursive;
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.wrap{
+    color: gold;
+    text-decoration: underline;
+    margin-top: 19px;
+
+}
+
+.down-text{
+    margin-top: 80px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.section{
+    background: url('pexels-filippo-bergamaschi-202684-986774.jpg') no-repeat center center/cover;
+}
+
+.expert{
+    color: gold;
+    text-shadow: 1px 1px 1px black;
+}
+
+.cardimgs{
+    width: 300px;
+    height: 150px;
+}

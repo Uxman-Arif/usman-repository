@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navbar navbar-expand bg-dark">
+                <div class="navbar-logo">
+                    <!-- <div class="card text-center bg-dark user-select-none no-gutters nav-card">
+                        <div class="card-img">
+                            <img src="Snapchat-1329313943 (2).jpg" style="width: 50px; height: 50px; border-radius: 50px;" alt="">
+                        </div>
+                        <div class="card-body fw-bold">
+                            The_Xmn Web Developer
+                        </div>
+                    </div> -->
+                    
+                    <img src="Snapchat-1329313943 (2).jpg" style="width: 50px; height: 50px; border-radius: 50px;" alt=""><span class="nav-card user-select-none">The_Xmn Web Developer</span>
+                    <!-- <div class="card-body fw-bold text-light">
+                        
+                    </div> -->
+                </div>
+                <ul class="navbar-nav ms-auto me-auto">
+                    <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Servises</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                </ul>
+
+                <div class="btn-group btn-light srch-btns btn-outline-light">
+                    <input type="search" placeholder="Search Here..." class="btn">
+                    <button class="btn">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center section">
+            <span class="typewriter col-8 text-uppercase cnst-text text-center fw-bold">Asslam-o-Alaikum! I am Usman Arif. I am a Front End Web developer right now. My experties are in these Coding languages :<span class="wrap"></span><h1><a href="" class="typewrite" data-period="2000" data-type='[ "HTML.", "CSS.", "BOOTSTRAP.", "JAVASCRIPT." ]'></a>
+            </h1></span><hr>
+
+            <div class="col-6 down-text text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusantium animi minima repudiandae eaque. Quidem rerum dolor .
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center fw-bold mt-5 expert">EXPERT IN FOLLOWING LANGUAGES</h1>
+    <div class="row">
+        <div class="card-group bg-dark">
+
+            <div class="card text-center col-3 bg-dark">
+                <div class="card-img"><img src="html.png" class='cardimgs'= alt=""></div>
+                <div class="card-body">
+                    <h2 class="card-title expert">HTML</h2>
+
+                </div>
+            </div>
+
+            <div class="card text-center col-3">
+                <div class="card-img"><img src="css.png" class='cardimgs' alt=""></div>
+                <div class="card-body">
+                    <h2 class="card-title expert">CSS</h2>
+
+                </div>
+            </div>
+
+            <div class="card text-center col-3">
+                <div class="card-img"><img src="css.png" class='cardimgs' alt=""></div>
+                <div class="card-body">
+                    <h2 class="card-title expert">BOOTSTRAP</h2>
+
+                </div>
+            </div>
+
+            <div class="card text-center col-3">
+                <div class="card-img"><img src="javascript.png" class='cardimgs' alt=""></div>
+                <div class="card-body">
+                    <h2 class="card-title expert">JAVASCRIPT</h2>
+
+                </div>
+            </div>
+
+            
+        </div>
+
+    </div>
+    <script>
+        var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+
+    </script>
+</body>
+</html>
